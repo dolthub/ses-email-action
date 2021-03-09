@@ -1,6 +1,10 @@
 name: 'SES email action'
 description: 'Send email with aws ses'
 inputs:
+  source:
+    description: 'address sending the email'
+    required: true
+    default: ''
   region:
     description: 'aws region'
     required: true
