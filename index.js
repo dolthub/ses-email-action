@@ -9,6 +9,7 @@ const dataFilePath = core.getInput('dataFile');
 const CcAddresses = JSON.parse(core.getInput('ccAddresses'));
 const ToAddresses = JSON.parse(core.getInput('toAddresses'));
 const ReplyToAddresses = JSON.parse(core.getInput('replyToAddresses'));
+const Source = core.getInput('source');
 
 const data = fs.readFileSync(dataFilePath, { encoding: 'utf-8' });
 
@@ -26,7 +27,7 @@ const params = {
         CcAddresses,
         ToAddresses,
     },
-    Source: 'github-actions-bot@corp.ld-corp.com', /* required */
+    Source, /* required */
     Template,
     TemplateData: JSON.stringify(templated),
     ReplyToAddresses,
